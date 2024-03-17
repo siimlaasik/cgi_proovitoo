@@ -1,0 +1,98 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="1" author="siim">
+        <createTable tableName="genre">
+            <column name="genre_id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="siim">
+        <createTable tableName="movie">
+            <column name="movie_id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="title" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rating" type="FLOAT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="3" author="siim">
+        <createTable tableName="room">
+            <column name="room_id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" />
+            </column>
+            <column name="rows" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="seats_per_row" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="4" author="siim">
+        <createTable tableName="session">
+            <column name="session_id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" foreignKeyName="fk_session_room_id"/>
+            </column>
+            <column name="time" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="movie_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_session_movie_id" references="movie(movie_id)"/>
+            </column>
+            <column name="room_id" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_session_room_id" references="room(room_id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="5" author="siim">
+        <createTable tableName="profile">
+            <column name="profile_id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="6" author="siim">
+        <createTable tableName="movie_genre">
+            <column name="movie_id" type="INT">
+                <constraints primaryKey="true" foreignKeyName="fk_movie_genre_movie_id" references="movie(movie_id)"/>
+            </column>
+            <column name="genre_id" type="INT">
+                <constraints primaryKey="true" foreignKeyName="fk_movie_genre_genre_id" references="genre(genre_id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="7" author="siim">
+        <createTable tableName="session_guest">
+            <column name="session_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="profile_id" type="INT">
+                <constraints primaryKey="true" foreignKeyName="fk_session_guest_profile_id" references="profile(profile_id)"/>
+            </column>
+            <column name="seat_nr" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="row_nr" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
