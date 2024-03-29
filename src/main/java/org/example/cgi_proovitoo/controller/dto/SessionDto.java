@@ -1,6 +1,10 @@
 package org.example.cgi_proovitoo.controller.dto;
 
-import java.sql.Date;
+import org.example.cgi_proovitoo.repository.Movie;
+import org.example.cgi_proovitoo.repository.Room;
 
-public record SessionDto(Integer session_id, Date time, Integer movie_id, Integer room_id) {
+import java.time.LocalDateTime;
+
+public record SessionDto(Integer sessionId, LocalDateTime time, Room room, Movie movie, String language) {
+
 }

@@ -11,15 +11,17 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class SessionGuest {
-    @Id
     @Column(name = "session_id")
     private Integer sessionId;
     @Id
-    @Column(name = "user_id")
-    private Integer userId;
+    @Column(name = "profile_id")
+    private Integer profileId;
     @Column(name = "seat_nr")
     private Integer seatNumber;
     @Column(name = "row_nr")
     private Integer row;
+    @Column(name = "user_id")
+    private Integer user;
 }
+
 
