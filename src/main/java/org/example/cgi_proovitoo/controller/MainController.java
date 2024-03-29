@@ -38,6 +38,11 @@ public class MainController {
         return mainService.getSession(id);
     }
 
+    @GetMapping("api/session/seat/{id}")
+    public RoomSizeDto getRoomSize(@PathVariable Integer id) {
+        return mainService.getRoomSize(id);
+    }
+
     @GetMapping("/api")
     public List<SessionDto> getSessions(@RequestParam(required = false) Integer ageLimit,
                                         @RequestParam(required = false) String genre,
