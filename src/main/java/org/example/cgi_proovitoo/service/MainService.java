@@ -89,4 +89,16 @@ public class MainService {
                 .collect(Collectors.toList());
     }
 
+    public List<MovieDto> getMovieSuggestion(Integer id) {
+        List<Session> sessions = sessionRepository.findAllSessionsByProfileId(id);
+        List<Movie> unwatched = movieRepository.findMoviesNotSeenByProfileId(id);
+        SessionSuggestions sessionSug = new SessionSuggestions(sessions, unwatched);
+        List<Movie> movies = sessionSug.suggestMovies();
+        for (Movie movie: movies) {
+            System.out.println(movie.getTitle());
+        }
+        return movies.stream()
+                .map(sessionMapper::mapMovieToDto)
+                .collect(Collectors.toList());
+    }
 }

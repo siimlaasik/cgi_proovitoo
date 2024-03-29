@@ -55,3 +55,14 @@ public class MainController {
             return mainService.getSessions();
         }
     }
+
+    @GetMapping("/api/session/{id}/seats")
+    public SessionGuestDto getSessionGuests(@PathVariable Integer id, @RequestParam Integer ticketNr) {
+        return mainService.getSessionGuests(id, ticketNr);
+    }
+
+    @GetMapping("/api/{id}")
+    public List<MovieDto> getMovieSuggestion(@PathVariable Integer id) {
+        return mainService.getMovieSuggestion(id);
+    }
+}
