@@ -1,8 +1,8 @@
 <h2>Rakenduse käivitamine</h2>
-<p>*Käivita cgi_proovitoo/dockercompose.yml file, et alustada andmebaas</p>
-<p>*Käivita Spring Boot Application CgiProovtooApplication, mille leiab src/main/java/org/example/cgi_proovitoo/CgiProovitooApplication.java</p>
-<p>*Käivita vue.js minnes terminalis frontend kausta (cd front_end) ning kasuta käsklust "npm run dev"</p>
-<p>*Veebilehekülg avaneb http://localhost:5173/</p>
+<p>Käivita cgi_proovitoo/dockercompose.yml file, et alustada andmebaas</p>
+<p>Käivita Spring Boot Application CgiProovtooApplication, mille leiab src/main/java/org/example/cgi_proovitoo/CgiProovitooApplication.java</p>
+<p>Käivita vue.js minnes terminalis frontend kausta (cd front_end) ning kasuta käsklust "npm run dev"</p>
+<p>Veebilehekülg avaneb http://localhost:5173/</p>
 
 <h2>Rakenduse tööpõhimõte</h2>
 <p>Rakenduse backend koosneb põhimõtteliselt neljast osast. </p>
@@ -31,9 +31,10 @@ kasutasin kaalude arvutamiseks chat-gpt abi.
 
 <h2>Tööaeg ja keerulised aspektid</h2>
 <p>Tööaeg kokku läks umbes 14-16 tundi</p>
+<p></p>
 <p>asjad, millega oli raskusi/võtsid palju aega</p>
-<p>*Liquibase changelog.xml filega oli mingi probleem, kus ta genereeris tabelitele lisa veerge. Sellele lahendust otseselt ei leidnud, vaid otsutasin kirjutada .sql failid, mis tõid tulemuse</p>
-<p>*Erinevate frontend raamistikega pole väga kogemust, mille tõttu routimisega oli alguses natuke raskusi. Osaliselt aitas chat-gpt, kuigi ajaga lihtsalt tulid lahendused.</p>
+<p>Liquibase changelog.xml filega oli mingi probleem, kus ta genereeris tabelitele lisa veerge. Sellele lahendust otseselt ei leidnud, vaid otsutasin kirjutada .sql failid, mis tõid tulemuse</p>
+<p>Erinevate frontend raamistikega pole väga kogemust, mille tõttu routimisega oli alguses natuke raskusi. Osaliselt aitas chat-gpt, kuigi ajaga lihtsalt tulid lahendused.</p>
 <p>*Filmide soovitamise algoritmi oli päris raske teha ja sellega tekkisid mitmed raskused, millega aitas mind chat-gpt</p>
 
 <h2>Mida tahaks parandada, millega ei jõudnud tegeleda</h2>
