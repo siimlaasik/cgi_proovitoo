@@ -15,8 +15,6 @@ public interface SessionMapper {
     Session sessionDtoToSession(SessionDto sessionDto);
 
 
-    @Mapping(target = "movie", source = "session.movie")
-    @Mapping(target = "room", source = "session.room")
     SessionDto sessionToSessionDto(Session session);
 
     MovieDto mapMovieToDto(Movie movie);
