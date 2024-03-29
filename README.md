@@ -1,7 +1,7 @@
 <h2>Rakenduse käivitamine</h2>
 <p>Käivita cgi_proovitoo/dockercompose.yml file, et alustada andmebaas</p>
 <p>Käivita Spring Boot Application CgiProovtooApplication, mille leiab src/main/java/org/example/cgi_proovitoo/CgiProovitooApplication.java</p>
-<p>Käivita vue.js minnes terminalis frontend kausta (cd front_end) ning kasuta käsklust "npm run dev"</p>
+<p>Käivita vue.js minnes terminalis frontend kausta (cd front_end) ning kasuta käsklust "npm install", "npm run build" ja "npm run dev"</p>
 <p>Veebilehekülg avaneb http://localhost:5173/</p>
 
 <h2>Rakenduse tööpõhimõte</h2>
