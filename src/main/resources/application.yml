@@ -1,3 +1,0 @@
-spring:
-  liquibase:
-    change-log: classpath:db/changelog/changelog-1.0.xml
