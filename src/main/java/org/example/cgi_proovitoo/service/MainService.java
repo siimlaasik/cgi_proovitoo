@@ -9,9 +9,6 @@ import org.example.cgi_proovitoo.controller.dto.SessionGuestDto;
 import org.example.cgi_proovitoo.mapper.MovieMapper;
 import org.example.cgi_proovitoo.mapper.RoomMapper;
 import org.example.cgi_proovitoo.mapper.SessionMapper;
-import org.example.cgi_proovitoo.repository.MovieRepository;
-import org.example.cgi_proovitoo.repository.Session;
-import org.example.cgi_proovitoo.repository.SessionRepository;
 import org.example.cgi_proovitoo.repository.*;
 import org.example.cgi_proovitoo.service.generator.SeatGenerator;
 import org.example.cgi_proovitoo.service.generator.SessionSuggestions;
@@ -55,6 +52,12 @@ public class MainService {
         }
         return sessionDtos;
     }
+
+    public RoomSizeDto getRoomSize(Integer id) {
+        var roomSize = roomRepository.getReferenceById(id);
+        return roomMapper.roomToRoomSizeDto(roomSize);
+    }
+
     public SessionGuestDto getSessionGuests(Integer id, Integer ticketNr) {
         var room = sessionRepository.getReferenceById(id).getRoom();
         SeatGenerator seatGenerator = new SeatGenerator(room.getRows(), room.getSeatsPerRow());
