@@ -19,4 +19,8 @@ public class Movie {
     private String title;
     @Column(name = "rating")
     private float rating;
+    @Column(name="genre")
+    private String genre;
+    @Column(name="age_limit")
+    private Integer ageLimit;
 }
